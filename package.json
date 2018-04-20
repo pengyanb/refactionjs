@@ -4,17 +4,214 @@
   "description": "Refactoring exercise for Node",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "cross-env NODE_ENV=development babel-node server",
+    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.babel.js --color -p --progress"
   },
   "repository": {
     "type": "git",
     "url": "https://github.dev.xero.com/gareth-cronin/refactionjs.git"
   },
-  "author": "",
+  "author": "Peng Yanbing (Peter)",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "chalk": "^2.4.0",
+    "compression": "^1.7.2",
+    "cross-env": "^5.1.4",
     "express": "^4.15.3",
     "handlebars": "^4.0.10",
-    "nedb": "^1.8.0"
+    "history": "^4.7.2",
+    "hoist-non-react-statics": "^2.5.0",
+    "immutable": "^3.8.2",
+    "lodash": "^4.17.5",
+    "nedb": "^1.8.0",
+    "node-loader": "^0.6.0",
+    "querystring": "^0.2.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-select": "^1.2.1",
+    "react-table": "^6.8.2",
+    "redux": "^4.0.0",
+    "redux-immutable": "^3.0.8",
+    "redux-saga": "^0.16.0",
+    "reselect": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-dynamic-import-node": "^1.2.0",
+    "babel-plugin-react-transform": "^3.0.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-react-constant-elements": "^6.23.0",
+    "babel-plugin-transform-react-inline-elements": "^6.22.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-node6": "^11.0.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "circular-dependency-plugin": "^5.0.2",
+    "css-loader": "^0.28.11",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-import-resolver-webpack": "^0.9.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-redux-saga": "^0.8.0",
+    "eventsource-polyfill": "^0.9.6",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "imports-loader": "^0.8.0",
+    "lint-staged": "^7.0.4",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-middleware": "^3.1.2",
+    "webpack-hot-middleware": "^2.22.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "latest",
+        {
+          "es2015": {
+            "modules": false
+          }
+        }
+      ],
+      "node6",
+      "react",
+      "stage-0"
+    ],
+    "env": {
+      "production": {
+        "only": [
+          "app",
+          "server"
+        ],
+        "plugins": [
+          "transform-react-remove-prop-types",
+          "transform-react-constant-elements",
+          "transform-react-inline-elements"
+        ]
+      },
+      "test": {
+        "plugins": [
+          "transform-es2015-modules-commonjs",
+          "dynamic-import-node"
+        ]
+      }
+    }
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "env": {
+      "browser": true,
+      "node": true,
+      "jest": true,
+      "es6": true
+    },
+    "plugins": [
+      "redux-saga",
+      "react",
+      "jsx-a11y"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "eslintIgnore": [
+      "/docs/*"
+    ],
+    "rules": {
+      "arrow-parens": [
+        "error",
+        "always"
+      ],
+      "arrow-body-style": [
+        2,
+        "as-needed"
+      ],
+      "comma-dangle": [
+        2,
+        "always-multiline"
+      ],
+      "import/imports-first": 0,
+      "import/newline-after-import": 0,
+      "import/no-dynamic-require": 0,
+      "import/no-extraneous-dependencies": 0,
+      "import/no-named-as-default": 0,
+      "import/no-unresolved": 2,
+      "import/prefer-default-export": 0,
+      "indent": [
+        2,
+        2,
+        {
+          "SwitchCase": 1
+        }
+      ],
+      "jsx-a11y/aria-props": 2,
+      "jsx-a11y/heading-has-content": 0,
+      "jsx-a11y/href-no-hash": 2,
+      "jsx-a11y/label-has-for": 2,
+      "jsx-a11y/mouse-events-have-key-events": 2,
+      "jsx-a11y/role-has-required-aria-props": 2,
+      "jsx-a11y/role-supports-aria-props": 2,
+      "max-len": 0,
+      "newline-per-chained-call": 0,
+      "no-confusing-arrow": 0,
+      "no-console": 0,
+      "no-bitwise": 0,
+      "no-nested-ternary": 0,
+      "no-use-before-define": 0,
+      "prefer-template": 2,
+      "class-methods-use-this": 0,
+      "react/forbid-prop-types": 0,
+      "react/jsx-first-prop-new-line": [
+        2,
+        "multiline"
+      ],
+      "react/jsx-filename-extension": 0,
+      "react/jsx-no-target-blank": 0,
+      "react/require-extension": 0,
+      "react/self-closing-comp": 0,
+      "react/prefer-stateless-function": [
+        0,
+        {
+          "ignorePureComponents": false
+        }
+      ],
+      "redux-saga/no-yield-in-race": 2,
+      "redux-saga/yield-effects": 2,
+      "require-yield": 0,
+      "import/no-webpack-loader-syntax": 0,
+      "no-param-reassign": 0,
+      "no-underscore-dangle": 0,
+      "no-else-return": 0,
+      "global-require": 0,
+      "consistent-return": 0,
+      "array-callback-return": 0,
+      "jsx-a11y/no-static-element-interactions": 0,
+      "no-mixed-operators": 0
+    },
+    "settings": {
+      "import/resolver": {
+        "webpack": {
+          "config": "./webpack/webpack.prod.babel.js"
+        }
+      }
+    }
   }
 }

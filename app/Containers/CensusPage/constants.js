@@ -1,0 +1,3 @@
+export const ACTION_READ_DATA = "app/Census/ACTION_READ_DATA";
+export const ACTION_SET_READ_DATA_RESULT =
+  "app/Census/ACTION_SET_READ_DATA_RESULT";
