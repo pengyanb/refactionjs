@@ -8,9 +8,10 @@ import { actionSetReadDataResult } from "./actions";
 export function* readDataRequest(action) {
   const url = "/data/read";
   try {
-    const res = yield axios.post(url, action.filterInfo);
+    const res = yield axios.post(url, { filterInfo: action.filterInfo });
     yield put(actionSetReadDataResult(res.data));
   } catch (err) {
+    console.error(err);
     yield put(
       actionSetReadDataResult({ error: true, message: err.toString() })
     );

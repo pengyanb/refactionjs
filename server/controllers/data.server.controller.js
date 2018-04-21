@@ -12,37 +12,58 @@ exports.read = async (req, res) => {
     let selector = {};
     let genderFilter;
     let ageFilter;
+    let nameFilter;
+    if (filterInfo.name) {
+      nameFilter = {
+        name: { $regex: new RegExp(`${filterInfo.name}`, "i") }
+      };
+    }
     if (Array.isArray(filterInfo.gender) && filterInfo.gender.length > 0) {
       genderFilter = { $or: [] };
       filterInfo.gender.map(genderInfo => {
         genderFilter.$or.push({ gender: genderInfo });
       });
     }
-    if (Array.isArray(filterInfo.age) && filterInfo.age.length > 0) {
-      ageFilter = { $or: [] };
-      filterInfo.age.map(ageInfo => {
-        ageFilter.$or.push({ age: ageInfo });
-      });
+    if (filterInfo.age.$gte || filterInfo.age.$lte) {
+      ageFilter = { $and: [] };
+      if (_.isInteger(filterInfo.age.$gte)) {
+        ageFilter.$and.push({ age: { $gte: filterInfo.age.$gte } });
+      }
+      if (_.isInteger(filterInfo.age.$lte)) {
+        ageFilter.$and.push({ age: { $lte: filterInfo.age.$lte } });
+      }
     }
 
-    console.log("[genderFilter]: ", genderFilter);
-    console.log("[ageFilter]: ", ageFilter);
+    // console.log('[nameFilter]: ', nameFilter);
+    // console.log("[genderFilter]: ", JSON.stringify(genderFilter, null, 2));
+    // console.log("[ageFilter]: ", JSON.stringify(ageFilter, null, 2));
 
-    if (genderFilter && ageFilter) {
-      selector = { $and: [genderFilter, ageFilter] };
-    } else if (genderFilter) {
-      selector = genderFilter;
-    } else if (ageFilter) {
-      selector = ageFilter;
+    if (genderFilter || ageFilter || nameFilter) {
+      selector = { $and: [] };
+      if (nameFilter) {
+        selector.$and.push(nameFilter);
+      }
+      if (genderFilter) {
+        selector.$and.push(genderFilter);
+      }
+      if (ageFilter) {
+        selector.$and.push(ageFilter);
+      }
     }
     console.log("[selector]: ", selector);
-    db.find(selector, (err, data) => {
-      if (err) {
-        res.json({ error: true, message: err.toString() });
-      } else {
-        res.json({ error: false, data });
-      }
-    });
+    try {
+      db.find(selector, (err, data) => {
+        if (err) {
+          console.error(err);
+          res.json({ error: true, message: err.toString() });
+        } else {
+          res.json({ error: false, data });
+        }
+      });
+    } catch (e) {
+      console.error(e);
+      res.json({ error: true, message: e.toString() });
+    }
   } else {
     res.json({ error: true, message: "invalid parameters" });
   }
