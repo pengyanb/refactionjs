@@ -1,0 +1,1074 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Containers.CensusPage.index.test render correctly 1`] = `
+<div>
+  <div
+    className="ReactTable striped -highlight"
+    style={Object {}}
+  >
+    <div
+      className="rt-table"
+      role="grid"
+      style={undefined}
+    >
+      <div
+        className="rt-thead -header"
+        style={
+          Object {
+            "minWidth": "400px",
+          }
+        }
+      >
+        <div
+          className="rt-tr"
+          role="row"
+          style={undefined}
+        >
+          <div
+            className="rt-th  rt-resizable-header -cursor-pointer"
+            onClick={[Function]}
+            role="columnheader"
+            style={
+              Object {
+                "flex": "100 0 auto",
+                "maxWidth": null,
+                "width": "100px",
+              }
+            }
+            tabIndex="-1"
+          >
+            <div
+              className="rt-resizable-header-content"
+            >
+              <h5>
+                ID
+              </h5>
+            </div>
+            <div
+              className="rt-resizer"
+              onMouseDown={[Function]}
+              onTouchStart={[Function]}
+            />
+          </div>
+          <div
+            className="rt-th  rt-resizable-header -cursor-pointer"
+            onClick={[Function]}
+            role="columnheader"
+            style={
+              Object {
+                "flex": "100 0 auto",
+                "maxWidth": null,
+                "width": "100px",
+              }
+            }
+            tabIndex="-1"
+          >
+            <div
+              className="rt-resizable-header-content"
+            >
+              <h5>
+                Name
+              </h5>
+            </div>
+            <div
+              className="rt-resizer"
+              onMouseDown={[Function]}
+              onTouchStart={[Function]}
+            />
+          </div>
+          <div
+            className="rt-th  rt-resizable-header -cursor-pointer"
+            onClick={[Function]}
+            role="columnheader"
+            style={
+              Object {
+                "flex": "100 0 auto",
+                "maxWidth": null,
+                "overflow": "visible",
+                "width": "100px",
+              }
+            }
+            tabIndex="-1"
+          >
+            <div
+              className="rt-resizable-header-content"
+            >
+              <h5>
+                Gender
+              </h5>
+            </div>
+            <div
+              className="rt-resizer"
+              onMouseDown={[Function]}
+              onTouchStart={[Function]}
+            />
+          </div>
+          <div
+            className="rt-th  rt-resizable-header -cursor-pointer"
+            onClick={[Function]}
+            role="columnheader"
+            style={
+              Object {
+                "flex": "100 0 auto",
+                "maxWidth": null,
+                "overflow": "visible",
+                "width": "100px",
+              }
+            }
+            tabIndex="-1"
+          >
+            <div
+              className="rt-resizable-header-content"
+            >
+              <h5>
+                Age
+              </h5>
+            </div>
+            <div
+              className="rt-resizer"
+              onMouseDown={[Function]}
+              onTouchStart={[Function]}
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="rt-thead -filters"
+        style={
+          Object {
+            "minWidth": "400px",
+          }
+        }
+      >
+        <div
+          className="rt-tr"
+          role="row"
+          style={undefined}
+        >
+          <div
+            className="rt-th"
+            onClick={[Function]}
+            role="columnheader"
+            style={
+              Object {
+                "flex": "100 0 auto",
+                "maxWidth": null,
+                "width": "100px",
+              }
+            }
+            tabIndex="-1"
+          />
+          <div
+            className="rt-th"
+            onClick={[Function]}
+            role="columnheader"
+            style={
+              Object {
+                "flex": "100 0 auto",
+                "maxWidth": null,
+                "width": "100px",
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <input
+                onChange={[Function]}
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            className="rt-th"
+            onClick={[Function]}
+            role="columnheader"
+            style={
+              Object {
+                "flex": "100 0 auto",
+                "maxWidth": null,
+                "overflow": "visible",
+                "width": "100px",
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                className="Select is-clearable is-searchable Select--multi"
+                style={undefined}
+              >
+                <div
+                  className="Select-control"
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={undefined}
+                >
+                  <span
+                    className="Select-multi-value-wrapper"
+                    id="react-select-2--value"
+                  >
+                    <div
+                      className="Select-placeholder"
+                    >
+                      Select...
+                    </div>
+                    <div
+                      className="Select-input"
+                      style={
+                        Object {
+                          "display": "inline-block",
+                        }
+                      }
+                    >
+                      <input
+                        aria-activedescendant="react-select-2--value"
+                        aria-describedby={undefined}
+                        aria-expanded="false"
+                        aria-haspopup="false"
+                        aria-label={undefined}
+                        aria-labelledby={undefined}
+                        aria-owns=""
+                        className={undefined}
+                        id={undefined}
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        required={false}
+                        role="combobox"
+                        style={
+                          Object {
+                            "boxSizing": "content-box",
+                            "width": "5px",
+                          }
+                        }
+                        tabIndex={undefined}
+                        value=""
+                      />
+                      <div
+                        style={
+                          Object {
+                            "height": 0,
+                            "left": 0,
+                            "overflow": "scroll",
+                            "position": "absolute",
+                            "top": 0,
+                            "visibility": "hidden",
+                            "whiteSpace": "pre",
+                          }
+                        }
+                      >
+                        
+                      </div>
+                    </div>
+                  </span>
+                  <span
+                    className="Select-arrow-zone"
+                    onMouseDown={[Function]}
+                  >
+                    <span
+                      className="Select-arrow"
+                      onMouseDown={[Function]}
+                    />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="rt-th"
+            onClick={[Function]}
+            role="columnheader"
+            style={
+              Object {
+                "flex": "100 0 auto",
+                "maxWidth": null,
+                "overflow": "visible",
+                "width": "100px",
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "width": "10%",
+                  }
+                }
+              >
+                <span>
+                  &gt;=
+                </span>
+              </div>
+              <div
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "width": "40%",
+                  }
+                }
+              >
+                <div
+                  className="Select is-clearable is-searchable Select--single"
+                  style={undefined}
+                >
+                  <div
+                    className="Select-control"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    style={undefined}
+                  >
+                    <span
+                      className="Select-multi-value-wrapper"
+                      id="react-select-3--value"
+                    >
+                      <div
+                        className="Select-placeholder"
+                      >
+                        greater or equal
+                      </div>
+                      <div
+                        className="Select-input"
+                        style={
+                          Object {
+                            "display": "inline-block",
+                          }
+                        }
+                      >
+                        <input
+                          aria-activedescendant="react-select-3--value"
+                          aria-describedby={undefined}
+                          aria-expanded="false"
+                          aria-haspopup="false"
+                          aria-label={undefined}
+                          aria-labelledby={undefined}
+                          aria-owns=""
+                          className={undefined}
+                          id={undefined}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={false}
+                          role="combobox"
+                          style={
+                            Object {
+                              "boxSizing": "content-box",
+                              "width": "5px",
+                            }
+                          }
+                          tabIndex={undefined}
+                          value=""
+                        />
+                        <div
+                          style={
+                            Object {
+                              "height": 0,
+                              "left": 0,
+                              "overflow": "scroll",
+                              "position": "absolute",
+                              "top": 0,
+                              "visibility": "hidden",
+                              "whiteSpace": "pre",
+                            }
+                          }
+                        >
+                          
+                        </div>
+                      </div>
+                    </span>
+                    <span
+                      className="Select-arrow-zone"
+                      onMouseDown={[Function]}
+                    >
+                      <span
+                        className="Select-arrow"
+                        onMouseDown={[Function]}
+                      />
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "width": "10%",
+                  }
+                }
+              >
+                <span>
+                  &lt;=
+                </span>
+              </div>
+              <div
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "width": "40%",
+                  }
+                }
+              >
+                <div
+                  className="Select is-clearable is-searchable Select--single"
+                  style={undefined}
+                >
+                  <div
+                    className="Select-control"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    style={undefined}
+                  >
+                    <span
+                      className="Select-multi-value-wrapper"
+                      id="react-select-4--value"
+                    >
+                      <div
+                        className="Select-placeholder"
+                      >
+                        less or equal
+                      </div>
+                      <div
+                        className="Select-input"
+                        style={
+                          Object {
+                            "display": "inline-block",
+                          }
+                        }
+                      >
+                        <input
+                          aria-activedescendant="react-select-4--value"
+                          aria-describedby={undefined}
+                          aria-expanded="false"
+                          aria-haspopup="false"
+                          aria-label={undefined}
+                          aria-labelledby={undefined}
+                          aria-owns=""
+                          className={undefined}
+                          id={undefined}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={false}
+                          role="combobox"
+                          style={
+                            Object {
+                              "boxSizing": "content-box",
+                              "width": "5px",
+                            }
+                          }
+                          tabIndex={undefined}
+                          value=""
+                        />
+                        <div
+                          style={
+                            Object {
+                              "height": 0,
+                              "left": 0,
+                              "overflow": "scroll",
+                              "position": "absolute",
+                              "top": 0,
+                              "visibility": "hidden",
+                              "whiteSpace": "pre",
+                            }
+                          }
+                        >
+                          
+                        </div>
+                      </div>
+                    </span>
+                    <span
+                      className="Select-arrow-zone"
+                      onMouseDown={[Function]}
+                    >
+                      <span
+                        className="Select-arrow"
+                        onMouseDown={[Function]}
+                      />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="rt-tbody"
+        style={
+          Object {
+            "minWidth": "400px",
+          }
+        }
+      >
+        <div
+          className="rt-tr-group"
+          role="rowgroup"
+        >
+          <div
+            className="rt-tr -odd"
+            role="row"
+            style={undefined}
+          >
+            <div
+              className="rt-td"
+              onClick={[Function]}
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "textAlign": "center",
+                    "width": "100%",
+                  }
+                }
+              >
+                <span>
+                  b3Fshn8F976TZCTg
+                </span>
+              </div>
+            </div>
+            <div
+              className="rt-td"
+              onClick={[Function]}
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "textAlign": "center",
+                    "width": "100%",
+                  }
+                }
+              >
+                <span>
+                  Jim
+                </span>
+              </div>
+            </div>
+            <div
+              className="rt-td"
+              onClick={[Function]}
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "textAlign": "center",
+                    "width": "100%",
+                  }
+                }
+              >
+                <span>
+                  male
+                </span>
+              </div>
+            </div>
+            <div
+              className="rt-td"
+              onClick={[Function]}
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "textAlign": "center",
+                    "width": "100%",
+                  }
+                }
+              >
+                <span>
+                  30
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="rt-tr-group"
+          role="rowgroup"
+        >
+          <div
+            className="rt-tr -even"
+            role="row"
+            style={undefined}
+          >
+            <div
+              className="rt-td"
+              onClick={[Function]}
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "textAlign": "center",
+                    "width": "100%",
+                  }
+                }
+              >
+                <span>
+                  oqnu2ZnPTebp04bG
+                </span>
+              </div>
+            </div>
+            <div
+              className="rt-td"
+              onClick={[Function]}
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "textAlign": "center",
+                    "width": "100%",
+                  }
+                }
+              >
+                <span>
+                  Bob
+                </span>
+              </div>
+            </div>
+            <div
+              className="rt-td"
+              onClick={[Function]}
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "textAlign": "center",
+                    "width": "100%",
+                  }
+                }
+              >
+                <span>
+                  male
+                </span>
+              </div>
+            </div>
+            <div
+              className="rt-td"
+              onClick={[Function]}
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "textAlign": "center",
+                    "width": "100%",
+                  }
+                }
+              >
+                <span>
+                  20
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="rt-tr-group"
+          role="rowgroup"
+        >
+          <div
+            className="rt-tr -padRow -odd"
+            role="row"
+            style={Object {}}
+          >
+            <div
+              className="rt-td"
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <span>
+                 
+              </span>
+            </div>
+            <div
+              className="rt-td"
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <span>
+                 
+              </span>
+            </div>
+            <div
+              className="rt-td"
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <span>
+                 
+              </span>
+            </div>
+            <div
+              className="rt-td"
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <span>
+                 
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          className="rt-tr-group"
+          role="rowgroup"
+        >
+          <div
+            className="rt-tr -padRow -even"
+            role="row"
+            style={Object {}}
+          >
+            <div
+              className="rt-td"
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <span>
+                 
+              </span>
+            </div>
+            <div
+              className="rt-td"
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <span>
+                 
+              </span>
+            </div>
+            <div
+              className="rt-td"
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <span>
+                 
+              </span>
+            </div>
+            <div
+              className="rt-td"
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <span>
+                 
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          className="rt-tr-group"
+          role="rowgroup"
+        >
+          <div
+            className="rt-tr -padRow -odd"
+            role="row"
+            style={Object {}}
+          >
+            <div
+              className="rt-td"
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <span>
+                 
+              </span>
+            </div>
+            <div
+              className="rt-td"
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <span>
+                 
+              </span>
+            </div>
+            <div
+              className="rt-td"
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <span>
+                 
+              </span>
+            </div>
+            <div
+              className="rt-td"
+              role="gridcell"
+              style={
+                Object {
+                  "flex": "100 0 auto",
+                  "maxWidth": null,
+                  "width": "100px",
+                }
+              }
+            >
+              <span>
+                 
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="pagination-bottom"
+    >
+      <div
+        className="-pagination"
+        style={undefined}
+      >
+        <div
+          className="-previous"
+        >
+          <button
+            className="-btn"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
+          >
+            Previous
+          </button>
+        </div>
+        <div
+          className="-center"
+        >
+          <span
+            className="-pageInfo"
+          >
+            Page
+             
+            <div
+              className="-pageJump"
+            >
+              <input
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                type="number"
+                value={1}
+              />
+            </div>
+             
+            of
+             
+            <span
+              className="-totalPages"
+            >
+              1
+            </span>
+          </span>
+          <span
+            className="select-wrap -pageSizeOptions"
+          >
+            <select
+              onChange={[Function]}
+              value={5}
+            >
+              <option
+                value={5}
+              >
+                5
+                 
+                rows
+              </option>
+              <option
+                value={10}
+              >
+                10
+                 
+                rows
+              </option>
+              <option
+                value={20}
+              >
+                20
+                 
+                rows
+              </option>
+              <option
+                value={25}
+              >
+                25
+                 
+                rows
+              </option>
+              <option
+                value={50}
+              >
+                50
+                 
+                rows
+              </option>
+              <option
+                value={100}
+              >
+                100
+                 
+                rows
+              </option>
+            </select>
+          </span>
+        </div>
+        <div
+          className="-next"
+        >
+          <button
+            className="-btn"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="-loading"
+    >
+      <div
+        className="-loading-inner"
+      >
+        Loading...
+      </div>
+    </div>
+  </div>
+</div>
+`;

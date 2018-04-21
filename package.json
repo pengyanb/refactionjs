@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development babel-node server",
-    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.babel.js --color -p --progress"
+    "build":
+      "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.babel.js --color -p --progress",
+    "test:server":
+      "cross-env NODE_ENV=test jest --no-cache --no-watchman --silent --forceExit --env=node -- server/test/*",
+    "test:app":
+      "cross-env NODE_ENV=test jest --no-cache --no-watchman -- app/test/*"
   },
   "repository": {
     "type": "git",
@@ -42,11 +47,13 @@
     "redux-immutable": "^3.0.8",
     "redux-saga": "^0.16.0",
     "reselect": "^3.0.1",
-    "semantic-ui-react-button-pagination": "^1.0.0"
+    "semantic-ui-react-button-pagination": "^1.0.0",
+    "supertest": "^3.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.3",
+    "babel-jest": "^22.4.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-dynamic-import-node": "^1.2.0",
     "babel-plugin-react-transform": "^3.0.0",
@@ -61,6 +68,8 @@
     "babel-preset-stage-0": "^6.24.1",
     "circular-dependency-plugin": "^5.0.2",
     "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-import-resolver-webpack": "^0.9.0",
@@ -72,8 +81,10 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "imports-loader": "^0.8.0",
+    "jest-cli": "^22.4.3",
     "lint-staged": "^7.0.4",
     "node-sass": "^4.8.3",
+    "react-test-renderer": "^16.3.2",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "webpack": "^4.6.0",
@@ -97,10 +108,7 @@
     ],
     "env": {
       "production": {
-        "only": [
-          "app",
-          "server"
-        ],
+        "only": ["app", "server"],
         "plugins": [
           "transform-react-remove-prop-types",
           "transform-react-constant-elements",
@@ -108,10 +116,7 @@
         ]
       },
       "test": {
-        "plugins": [
-          "transform-es2015-modules-commonjs",
-          "dynamic-import-node"
-        ]
+        "plugins": ["transform-es2015-modules-commonjs", "dynamic-import-node"]
       }
     }
   },
@@ -124,11 +129,7 @@
       "jest": true,
       "es6": true
     },
-    "plugins": [
-      "redux-saga",
-      "react",
-      "jsx-a11y"
-    ],
+    "plugins": ["redux-saga", "react", "jsx-a11y"],
     "parserOptions": {
       "ecmaVersion": 6,
       "sourceType": "module",
@@ -136,22 +137,10 @@
         "jsx": true
       }
     },
-    "eslintIgnore": [
-      "/docs/*"
-    ],
     "rules": {
-      "arrow-parens": [
-        "error",
-        "always"
-      ],
-      "arrow-body-style": [
-        2,
-        "as-needed"
-      ],
-      "comma-dangle": [
-        2,
-        "always-multiline"
-      ],
+      "arrow-parens": ["error", "always"],
+      "arrow-body-style": [2, "as-needed"],
+      "comma-dangle": [2, "always-multiline"],
       "import/imports-first": 0,
       "import/newline-after-import": 0,
       "import/no-dynamic-require": 0,
@@ -168,7 +157,6 @@
       ],
       "jsx-a11y/aria-props": 2,
       "jsx-a11y/heading-has-content": 0,
-      "jsx-a11y/href-no-hash": 2,
       "jsx-a11y/label-has-for": 2,
       "jsx-a11y/mouse-events-have-key-events": 2,
       "jsx-a11y/role-has-required-aria-props": 2,
@@ -183,10 +171,7 @@
       "prefer-template": 2,
       "class-methods-use-this": 0,
       "react/forbid-prop-types": 0,
-      "react/jsx-first-prop-new-line": [
-        2,
-        "multiline"
-      ],
+      "react/jsx-first-prop-new-line": [2, "multiline"],
       "react/jsx-filename-extension": 0,
       "react/jsx-no-target-blank": 0,
       "react/require-extension": 0,
@@ -217,5 +202,18 @@
         }
       }
     }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "app/**/*.{js,jsx}",
+      "!app/**/*.test.{js,jsx}",
+      "!app/*/RbGenerated*/*.{js,jsx}",
+      "!app/app.js",
+      "!app/routes.js",
+      "!app/**/index.{js,jsx}"
+    ],
+    "moduleDirectories": ["node_modules", "app", "server"],
+    "testRegex": "tests/.*\\.test\\.js$",
+    "testPathDirs": ["app", "models", "server"]
   }
 }

@@ -1,8 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ReactTable from "react-table";
+import React from 'react';
+import PropTypes from 'prop-types';
+import ReactTable from 'react-table';
 
-import "react-table/react-table.css";
+if (process.env.NODE_ENV !== 'test') {
+  require('react-table/react-table.css');
+}
 
 export default class DataTableComponent extends React.Component {
   render() {
@@ -23,5 +25,5 @@ export default class DataTableComponent extends React.Component {
 DataTableComponent.propTypes = {
   columns: PropTypes.array.isRequired,
   data: PropTypes.array.isRequired,
-  FilterComponent: PropTypes.func
+  FilterComponent: PropTypes.func,
 };

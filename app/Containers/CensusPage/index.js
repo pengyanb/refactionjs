@@ -16,8 +16,10 @@ import { actionReadData } from "./actions";
 
 import DataTableComponent from "../../Components/DataTableComponent";
 
-import "react-select/dist/react-select.css";
-import "./index.scss";
+if (process.env.NODE_ENV !== 'test') {
+  require("react-select/dist/react-select.css");
+  require("./index.scss");
+}
 
 const COLUMN_MAPPER = [
   {
@@ -142,7 +144,7 @@ export class CensusPage extends React.Component {
         {data ? (
           <DataTableComponent
             data={data}
-            columns={this.projectDataTableColumns()}
+            columns={this.projectDataTableColumns()} 
             FilterComponent={filterComponentInfo => {
               const columnId = filterComponentInfo.column.id;
               let useCustomFilter = false;
@@ -260,7 +262,7 @@ export class CensusPage extends React.Component {
 
 CensusPage.propTypes = {
   readData: PropTypes.func.isRequired,
-  CensusPage: PropTypes.object.isRequired
+  CensusPage: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({

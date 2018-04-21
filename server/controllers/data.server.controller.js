@@ -1,30 +1,30 @@
-const Datastore = require("nedb");
-const _ = require("lodash");
+const Datastore = require('nedb');
+const _ = require('lodash');
 const db = new Datastore({
-  filename: "./server/data/db.json",
-  autoload: true
+  filename: './server/data/db.json',
+  autoload: true,
 });
 
 exports.read = async (req, res) => {
   const filterInfo = req.body.filterInfo;
-  console.log("[filterInfo]: ", req.body);
+  console.log('[filterInfo]: ', req.body);
   if (_.isPlainObject(filterInfo)) {
     let selector = {};
     let genderFilter;
     let ageFilter;
     let nameFilter;
-    if (filterInfo.name) {
+    if (typeof filterInfo.name === 'string') {
       nameFilter = {
-        name: { $regex: new RegExp(`${filterInfo.name}`, "i") }
+        name: { $regex: new RegExp(`${filterInfo.name}`, 'i') },
       };
     }
     if (Array.isArray(filterInfo.gender) && filterInfo.gender.length > 0) {
       genderFilter = { $or: [] };
-      filterInfo.gender.map(genderInfo => {
+      filterInfo.gender.map((genderInfo) => {
         genderFilter.$or.push({ gender: genderInfo });
       });
     }
-    if (filterInfo.age.$gte || filterInfo.age.$lte) {
+    if (filterInfo.age && (filterInfo.age.$gte || filterInfo.age.$lte)) {
       ageFilter = { $and: [] };
       if (_.isInteger(filterInfo.age.$gte)) {
         ageFilter.$and.push({ age: { $gte: filterInfo.age.$gte } });
@@ -50,7 +50,7 @@ exports.read = async (req, res) => {
         selector.$and.push(ageFilter);
       }
     }
-    console.log("[selector]: ", selector);
+    console.log('[selector]: ', selector);
     try {
       db.find(selector, (err, data) => {
         if (err) {
@@ -65,6 +65,6 @@ exports.read = async (req, res) => {
       res.json({ error: true, message: e.toString() });
     }
   } else {
-    res.json({ error: true, message: "invalid parameters" });
+    res.json({ error: true, message: 'invalid parameters' });
   }
 };
