@@ -5,12 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development babel-node server",
-    "build":
-      "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.babel.js --color -p --progress",
-    "test:server":
-      "cross-env NODE_ENV=test jest --no-cache --no-watchman --silent --forceExit --env=node -- server/test/*",
-    "test:app":
-      "cross-env NODE_ENV=test jest --no-cache --no-watchman -- app/test/*"
+    "start:production": "npm run build && cross-env NODE_ENV=production babel-node server",
+    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.babel.js --color -p --progress",
+    "test:server": "cross-env NODE_ENV=test jest --no-cache --no-watchman --silent --forceExit --env=node -- server/test/*",
+    "test:app": "cross-env NODE_ENV=test jest --no-cache --no-watchman -- app/test/*"
   },
   "repository": {
     "type": "git",
@@ -108,7 +106,10 @@
     ],
     "env": {
       "production": {
-        "only": ["app", "server"],
+        "only": [
+          "app",
+          "server"
+        ],
         "plugins": [
           "transform-react-remove-prop-types",
           "transform-react-constant-elements",
@@ -116,7 +117,10 @@
         ]
       },
       "test": {
-        "plugins": ["transform-es2015-modules-commonjs", "dynamic-import-node"]
+        "plugins": [
+          "transform-es2015-modules-commonjs",
+          "dynamic-import-node"
+        ]
       }
     }
   },
@@ -129,7 +133,11 @@
       "jest": true,
       "es6": true
     },
-    "plugins": ["redux-saga", "react", "jsx-a11y"],
+    "plugins": [
+      "redux-saga",
+      "react",
+      "jsx-a11y"
+    ],
     "parserOptions": {
       "ecmaVersion": 6,
       "sourceType": "module",
@@ -138,9 +146,18 @@
       }
     },
     "rules": {
-      "arrow-parens": ["error", "always"],
-      "arrow-body-style": [2, "as-needed"],
-      "comma-dangle": [2, "always-multiline"],
+      "arrow-parens": [
+        "error",
+        "always"
+      ],
+      "arrow-body-style": [
+        2,
+        "as-needed"
+      ],
+      "comma-dangle": [
+        2,
+        "always-multiline"
+      ],
       "import/imports-first": 0,
       "import/newline-after-import": 0,
       "import/no-dynamic-require": 0,
@@ -171,7 +188,10 @@
       "prefer-template": 2,
       "class-methods-use-this": 0,
       "react/forbid-prop-types": 0,
-      "react/jsx-first-prop-new-line": [2, "multiline"],
+      "react/jsx-first-prop-new-line": [
+        2,
+        "multiline"
+      ],
       "react/jsx-filename-extension": 0,
       "react/jsx-no-target-blank": 0,
       "react/require-extension": 0,
@@ -212,8 +232,16 @@
       "!app/routes.js",
       "!app/**/index.{js,jsx}"
     ],
-    "moduleDirectories": ["node_modules", "app", "server"],
+    "moduleDirectories": [
+      "node_modules",
+      "app",
+      "server"
+    ],
     "testRegex": "tests/.*\\.test\\.js$",
-    "testPathDirs": ["app", "models", "server"]
+    "testPathDirs": [
+      "app",
+      "models",
+      "server"
+    ]
   }
 }
